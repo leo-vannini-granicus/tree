@@ -338,10 +338,14 @@ class Tree extends React.Component<TreeProps, TreeState> {
 
     // ================ flattenNodes =================
     if (treeData || newState.expandedKeys) {
+      console.log('treeData', treeData);
+      console.log('prevStaste.treeData', prevState.treeData);
       const flattenNodes: FlattenNode[] = flattenTreeData(
         treeData || prevState.treeData,
         newState.expandedKeys || prevState.expandedKeys,
       );
+      
+      console.log('flattenNodes', flattenNodes);
       newState.flattenNodes = flattenNodes;
     }
 
